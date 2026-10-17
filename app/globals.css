@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-system, system-ui, sans-serif;
+  --color-cream: #fffaf1;
+  --color-sand: #f5ead6;
+  --color-sand2: #efe0c6;
+  --color-ink: #22304f;
+  --color-ink2: #5a6a8a;
+  --color-serene: #4f7fd6;
+  --color-serene2: #7ca6ea;
+  --color-mint: #8fd0b8;
+  --color-mint2: #d7f0e5;
+  --color-sun: #ffb703;
+  --color-sun2: #ffe9ad;
+  --color-peach: #ffb59e;
+  --color-blush: #ffe7dc;
+}
+
+html { scroll-behavior: smooth; }
+body { background: #fffaf1; color: #22304f; font-family: var(--font-jakarta), ui-sans-system, system-ui, sans-serif; }
+* { -webkit-tap-highlight-color: transparent; }
+::selection { background: #ffe9ad; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #e3d5bd; border-radius: 99px; border: 2px solid #fffaf1; }
+::-webkit-scrollbar-track { background: transparent; }
+input[type="range"] { accent-color: #4f7fd6; }
+canvas.drawing { touch-action: none; }
+
+@keyframes blobmorph {
+  0%,100% { border-radius: 58% 42% 55% 45% / 55% 58% 42% 45%; }
+  33% { border-radius: 45% 55% 48% 52% / 60% 42% 58% 40%; }
+  66% { border-radius: 52% 48% 60% 40% / 45% 55% 45% 55%; }
+}
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(3deg); } }
+@keyframes floaty2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes rise {
+  0% { transform: translateY(10vh) scale(.7); opacity: 0; }
+  15% { opacity: .8; }
+  100% { transform: translateY(-70vh) scale(1.15); opacity: 0; }
+}
+.animate-blob { animation: blobmorph 12s ease-in-out infinite; }
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+.animate-floaty2 { animation: floaty2 4.5s ease-in-out infinite; }
+.animate-spinslow { animation: spinSlow 26s linear infinite; }
+.animate-rise { animation: rise linear infinite; }
+
+.texture-dots {
+  background-image: radial-gradient(#e8dcc2 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
